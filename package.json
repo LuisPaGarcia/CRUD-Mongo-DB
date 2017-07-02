@@ -1,0 +1,21 @@
+{
+  "name": "crud-mongo",
+  "version": "1.0.0",
+  "description": "Example how to do a CRUD with mongoDB on MLab with Node.js",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "@diganluispa <luispa@geekdeguatemala.com>",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.4",
+    "body-parser": "^1.17.2",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.3",
+    "mongodb": "^2.2.29"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
