@@ -2,30 +2,47 @@
 <html lang="en" ng-app="aplic" ng-controller="controller1">
 <head>
   <meta charset="UTF-8">
-  <title>MY APP</title>
+  <title>CRUD MEAN</title>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     .rows:hover{
       background-color: yellow;
       color:purple;
     }
   </style>
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/app.css">
+
 </head>
 <body>
   {{ output }}
   <script src="/angular/angular.min.js"></script>
   <script src="angapp.js"></script>
+ 
 
-<!---->
+<!-- -->
   <form action="/quotes" method="POST" id="formu" ng-click="validateIdExist()">
-    <input type="text" placeholder="_id" name="_id" id="_id" readonly >
-    <input type="text" placeholder="Nombre" name="name" id="name" required>
-    <input type="text" placeholder="Frase" name="quote" id="quote" required>
-    <input type="text" placeholder="Ip" name="ip" ng-model="ip" style="display:none;">
-    <label name="ip" ng-model="ip"  >{{ ip }}</label>
-  <button type="submit">Submit</button>
-  <button formaction="/update" ng-disabled="idExist">UPDATE</button>
-  <button formaction="/delete" ng-disabled="idExist">DELETE</button>
-  <button formaction="#" ng-click="clear()">Clear</button>
+  <div class="row">
+    <div class="large-4 columns">
+      <label>Input Label
+        <input type="text" placeholder="_id" name="_id" id="_id" readonly >
+      </label>
+    </div>
+    <div class="large-4 columns">
+      <input type="text" placeholder="Nombre" name="name" id="name" required>
+    </div>
+    <div class="large-4 columns">
+      <input type="text" placeholder="Frase" name="quote" id="quote" required>
+    </div>
+    <div class="large-4 columns">
+      <input type="text" placeholder="Ip" name="ip" ng-model="ip" readonly>
+    </div>
+  </div>
+  <button class="button" type="submit">Submit</button>
+  <button class="button" formaction="/update" ng-disabled="idExist">UPDATE</button>
+  <button class="button" formaction="/delete" ng-disabled="idExist">DELETE</button>
+  <button class="button" formaction="#" ng-click="clear()">Clear</button>
 </form>
 
 <table>
@@ -46,7 +63,10 @@
     </tr>
   </tbody>
 </table>
-
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/what-input.js"></script>
+    <script src="js/vendor/foundation.js"></script>
+    <script src="js/app.js"></script>
 </body>
 
 </html>

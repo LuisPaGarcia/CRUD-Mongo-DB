@@ -26,7 +26,7 @@ app.use(express.static(`${__dirname}/node_modules`));
 app.use(express.static(`${__dirname}/js`));
 
 app.get('/favicon.ico', function(req, res) {
-    res.send(204);
+    res.sendStatus(204)
 });
 
 app.post('/quotes', (req,res) =>{
