@@ -10,18 +10,23 @@
       background-color: yellow;
       color:purple;
     }
+    .form{
+      width: 500px;
+      margin: auto;
+    }
   </style>
     <link rel="stylesheet" href="css/foundation.css">
     <link rel="stylesheet" href="css/app.css">
 
 </head>
 <body>
-  {{ output }}
+<h1>{{ output }}</h1>  
   <script src="/angular/angular.min.js"></script>
   <script src="angapp.js"></script>
  
 
 <!-- -->
+<div class="form">
   <form action="/quotes" method="POST" id="formu" ng-click="validateIdExist()">
   <div class="row">
     <div class="large-4 columns">
@@ -30,21 +35,20 @@
       </label>
     </div>
     <div class="large-4 columns">
+      <input type="text" placeholder="Ip" name="ip" ng-model="ip" readonly>
+    </div>
+    <div class="large-4 columns">
       <input type="text" placeholder="Nombre" name="name" id="name" required>
     </div>
     <div class="large-4 columns">
       <input type="text" placeholder="Frase" name="quote" id="quote" required>
     </div>
-    <div class="large-4 columns">
-      <input type="text" placeholder="Ip" name="ip" ng-model="ip" readonly>
-    </div>
   </div>
-  <button class="button" type="submit">Submit</button>
+  <button class="button" type="submit">INSERT</button>
   <button class="button" formaction="/update" ng-disabled="idExist">UPDATE</button>
   <button class="button" formaction="/delete" ng-disabled="idExist">DELETE</button>
   <button class="button" formaction="#" ng-click="clear()">Clear</button>
 </form>
-
 <table>
   <th>
     <tr>
@@ -63,6 +67,7 @@
     </tr>
   </tbody>
 </table>
+</div>
     <script src="js/vendor/jquery.js"></script>
     <script src="js/vendor/what-input.js"></script>
     <script src="js/vendor/foundation.js"></script>

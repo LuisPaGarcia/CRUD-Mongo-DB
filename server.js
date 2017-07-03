@@ -5,14 +5,15 @@ const MongoClient = require('mongodb').MongoClient;
 
 const app = express();
 const URLTOCON = process.env.URLTOCON;
+const port = 80;
 var db;
 console.log(URLTOCON);
 MongoClient.connect(URLTOCON, (err, database) => {
   if (err) return console.log(err);
   db = database;
 
-  app.listen(3000, () => {
-    console.log('listening on 3000')
+  app.listen(port, () => {
+    console.log(`listening on ${port}` )
   })
 
 })
@@ -46,7 +47,8 @@ app.get("/getvar", function(req, res){
 });
 
 app.get('/getIp', ( req , res )=>{
-     let ip = req.headers['x-forwarded-for'] || 
+     let ip =  
+     req.headers['x-forwarded-for'] || 
      req.connection.remoteAddress || 
      req.socket.remoteAddress ||
      req.connection.socket.remoteAddress;
